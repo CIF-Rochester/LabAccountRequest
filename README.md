@@ -5,6 +5,7 @@ A simple web-form to request the creation of a lab account.
 Features:
 - [ ] Request a lab account
 - [ ] Trusted lab accounts cany approve or deny requests
+- [ ] Audit log for actions
 - [ ] Email notifications of new requests sent to tech director emails
 - [ ] Email verification for lab account requests
   - Blocked on restrictions from SES sandbox
