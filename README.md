@@ -27,8 +27,18 @@ To set up the project for development:
 
 3. Install dependencies with `pip3 -r requirements.txt`
 
-4. Create and configure a `.env` file: `cp sample.env .env` and fill out each
-    key with a correct value. **Never commit the .env file**
+4. Create and configure a `config.toml` file:
+    
+    `cp config.example.toml config.toml` and add the development settings. You
+    will need to edit:
+
+    - aws.access_key
+    - aws.secret_key
+    - aws.sendmail_url
+    - mail.*.to_addresses
+    - mail.*.from_address
+
+    Feel free to edit other settings. And remember, **never commit config.toml**.
 
 4. Start the development server with `python3 main.py`.
 

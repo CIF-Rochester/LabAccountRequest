@@ -1,0 +1,48 @@
+# Never commit a file with the actual information filled in
+
+[aws]
+access_key = "INSERT_AWS_ACCESS_KEY"
+secret_key = "INSERT_AWS_SECRET_KEY"
+sendmail_url = "INSERT_cifSendMail_FUNCTION_URL"
+
+[db]
+db_file = "database.db"
+
+[web]
+# A review session (created by a new request notification or a reminder) will
+# expire `review_session_ttl` seconds after it is created.
+review_session_ttl = 604800
+
+[mail]
+# Check if a new email notification needs to be created according to this
+# schedule, using the same syntax as crontab jobs. This example schedules the
+# notification job to run at 8am and 8pm each day.
+notification_schedule = "0 8-20/12 * * * *"
+
+# Send a reminder about unreviewed requests according to this schedule. This
+# example schedules the reminder job to be run at noon each Sunday, Tuesday,
+# Thursday, and Saturday.
+reminder_schedule = "0 12 * * * 0,2,4,6"
+
+# When `spam_threshold` or more requests have been created since the last mail
+# was sent, start the spam resolution process instead of sending a new_request
+# email.
+spam_threshold = 10
+
+[mail.new_requests]
+to_addresses = ["INSERT", "EMAILS"]
+from_address = "INSERT_FROM_ADDRESS"
+subject_template = "Lab Account Request: {n} new account requests received"
+body_template_file = "mail_templates/new_requests.txt"
+
+[mail.spam_detected]
+to_addresses = ["INSERT", "EMAILS"]
+from_address = "INSERT_FROM_ADDRESS"
+subject_template = "Lab Account Request: Possible spam detected, manual action required"
+body_template_file = "mail_templates/spam_detected.txt"
+
+[mail.reminder]
+to_addresses = ["INSERT", "EMAILS"]
+from_address = "INSERT_FROM_ADDRESS"
+subject_template = "Lab Account Request: {n} account requests are awaiting review"
+body_template_file = "mail_templates/reminder.txt"

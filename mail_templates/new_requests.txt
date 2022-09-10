@@ -1,0 +1,6 @@
+{n} new lab account requests have been received. To review these requests, and
+any older unreviewed requests, visit:
+
+{reviewLink}
+
+Please do so as soon as possible!

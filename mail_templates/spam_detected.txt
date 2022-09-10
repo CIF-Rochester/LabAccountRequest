@@ -1,0 +1,12 @@
+{n} new lab account requests have been received. This exceeds the configured
+spam threshold. The potentially fraudulent requests have been moved into a
+temporary table in the database. To review these requests, ssh into the server
+hosting this service and connect to the SQLite database.
+
+Complete the review by deciding, for each request, to either:
+
+- Delete and ignore the fraudulent request
+- Review the honest request and create a lab account manually through Citadel
+  if you approve of the request.
+
+The name of the table containing these requests is {tempTableName}.

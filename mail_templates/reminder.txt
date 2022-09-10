@@ -1,0 +1,7 @@
+{n} lab account requests are waiting to be reviewed. You've already been notified
+about these requests, but have not acted on them. Please respond to account
+requests promptly!
+
+To review these requests, visit:
+
+{reviewLink}
