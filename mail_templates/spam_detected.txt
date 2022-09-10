@@ -6,7 +6,12 @@ hosting this service and connect to the SQLite database.
 Complete the review by deciding, for each request, to either:
 
 - Delete and ignore the fraudulent request
-- Review the honest request and create a lab account manually through Citadel
-  if you approve of the request.
+- Review the honest request and, if you approve the request:
+  - Create the account in Citadel with a temporary password
+  - Send an email to the requestee with their temporary password
+  - Add the request to the reviewed_requests table and update the audit log
+- If you don't approve an honest request, send an email to the requestee telling
+  them their request was denied.
 
-The name of the table containing these requests is {tempTableName}.
+The name of the table containing these requests is {tempTableName}. Make sure to
+delete this table when you have finished.

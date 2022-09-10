@@ -9,6 +9,7 @@ Features:
 - [ ] Email notifications of new requests sent to tech director emails
 - [ ] Email verification for lab account requests
   - Blocked on restrictions from SES sandbox
+- [ ] ReCaptcha for spam prevention
 
 ## Development
 

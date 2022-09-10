@@ -1,1 +1,62 @@
-hello world!
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CIF Lab Account Request</title>
+</head>
+
+<body>
+  <h1>Request a CIF Lab Account</h1>
+
+  <form method="POST" action="/">
+    {{ form.csrf_token }}
+    <fieldset>
+      {{ form.first_name.label }}
+      {{ form.first_name() }}
+    </fieldset>
+    <fieldset>
+      {{ form.last_name.label }}
+      {{ form.last_name() }}
+    </fieldset>
+    <fieldset>
+      {{ form.net_id.label }}
+      {{ form.net_id() }}
+    </fieldset>
+    <fieldset>
+      {{ form.student_id.label }}
+      {{ form.student_id() }}
+      {% if form.student_id.errors %}
+      <ul>
+        {% for error in form.student_id.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </fieldset>
+    <fieldset>
+      {{ form.lcc.label }}
+      {{ form.lcc() }}
+      {% if form.lcc.errors %}
+      <ul>
+        {% for error in form.lcc.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </fieldset>
+    <fieldset>
+      {{ form.reason.label }}
+      <br />
+      {{ form.reason() }}
+    </fieldset>
+    <input type="submit" value="Request an account">
+  </form>
+
+  <p>You can find your LCC number in the top-left corner of your student ID card. If you replace your ID card, you will
+    need to talk to a tech director to get swipe access restored.</p>
+</body>
+
+</html>

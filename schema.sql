@@ -3,11 +3,13 @@ DROP TABLE IF EXISTS active_requests;
 CREATE TABLE active_requests (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  notification_sent BOOLEAN NOT NULL DEFAULT FALSE,
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
   net_id TEXT NOT NULL,
   student_id TEXT NOT NULL,
-  id_card_lcc TEXT NOT NULL
+  lcc TEXT NOT NULL,
+  reason TEXT NOT NULL
 );
 
 DROP TABLE IF EXISTS review_sessions;
@@ -41,7 +43,8 @@ CREATE TABLE reviewed_requests (
   last_name TEXT NOT NULL,
   net_id TEXT NOT NULL,
   student_id TEXT NOT NULL,
-  id_card_lcc TEXT NOT NULL
+  lcc TEXT NOT NULL,
+  reason TEXT NOT NULL
 );
 
 DROP TABLE IF EXISTS audit_log;

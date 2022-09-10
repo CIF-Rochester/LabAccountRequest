@@ -9,6 +9,8 @@ sendmail_url = "INSERT_cifSendMail_FUNCTION_URL"
 db_file = "database.db"
 
 [web]
+# Generate one with `python -c "import os; print(os.urandom(24).hex())"`
+secret_key = "INSERT_SECRET_KEY"
 # A review session (created by a new request notification or a reminder) will
 # expire `review_session_ttl` seconds after it is created.
 review_session_ttl = 604800

@@ -24,6 +24,7 @@ class DBConfig:
 
 class WebConfig:
     def __init__(self, d):
+        self.secret_key: str = d['secret_key']
         self.review_session_ttl: int = d['review_session_ttl']
 
 
