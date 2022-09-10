@@ -10,6 +10,28 @@ Features:
 - [ ] Email verification for lab account requests
   - Blocked on restrictions from SES sandbox
 
+## Development
+
+First, follow the [AWS Configuration Steps](#AWS_Configuration) in a test AWS
+account (or production: this is CIF, does it really matter?).
+
+To set up the project for development:
+
+1. Create a venv:
+
+    Install python3 venv according to your platforms instructions. Create the
+    venv with `python3 -m venv .venv`
+
+2. Activate it with `source .venv/bin/activate`. If you are not using bash,
+    look for instructions for your platform.
+
+3. Install dependencies with `pip3 -r requirements.txt`
+
+4. Create and configure a `.env` file: `cp sample.env .env` and fill out each
+    key with a correct value. **Never commit the .env file**
+
+4. Start the development server with `python3 main.py`.
+
 ## Deploying
 
 ### AWS Configuration
@@ -92,13 +114,6 @@ If you followed all these steps and it didn't work, good luck!
 ### Deploying the web application
 
 TODO
-
-## Development
-
-First, follow the [AWS Configuration Steps](#AWS_Configuration) in a test AWS
-account (or production: this is CIF, does it really matter?).
-
-To set up the project for development, TODO
 
 ## Architecture
 
