@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Review - CIF Lab Account Request</title>
+</head>
+
+<body>
+  <h1>Request from {{ request[1] }} {{ request[2] }}</h1>
+  <table>
+    <tbody>
+      <tr>
+        <td>First Name</td>
+        <td>{{ request[1] }}</td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>{{ request[2] }}</td>
+      </tr>
+      <tr>
+        <td>Net ID</td>
+        <td>{{ request[3] }}</td>
+      </tr>
+      <tr>
+        <td>Student ID</td>
+        <td>{{ request[4] }}</td>
+      </tr>
+      <tr>
+        <td>LCC</td>
+        <td>{{ request[5] }}</td>
+      </tr>
+      <tr>
+        <td>Reason</td>
+        <td>{{ request[6] }}</td>
+      </tr>
+      <tr>
+        <td>Created At</td>
+        <td>{{ request[0] }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form action="/review/{{ request_id }}/submit">
+    <input type="hidden" name="approved" value="true" />
+    <input type="submit" value="Approve" />
+  </form>
+  <form action="/review/{{ request_id }}/submit">
+    <input type="hidden" name="approved" value="false" />
+    <input type="submit" value="Approve" />
+  </form>
+</body>
+
+</html>

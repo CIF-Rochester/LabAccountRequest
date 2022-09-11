@@ -12,25 +12,6 @@ CREATE TABLE active_requests (
   reason TEXT NOT NULL
 );
 
-DROP TABLE IF EXISTS review_sessions;
-
-CREATE TABLE review_sessions (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  expires_at TIMESTAMP NOT NULL
-);
-
-DROP TABLE IF EXISTS review_session_requests;
-
-CREATE TABLE review_session_requests (
-  review_session INTEGER NOT NULL,
-  active_request INTEGER NOT NULL,
-
-  FOREIGN KEY (review_session) REFERENCES review_sessions(id),
-  FOREIGN KEY (active_request) REFERENCES active_requests(id),
-  PRIMARY KEY (review_session, active_request)
-);
-
 DROP TABLE IF EXISTS reviewed_requests;
 
 CREATE TABLE reviewed_requests (
@@ -39,6 +20,7 @@ CREATE TABLE reviewed_requests (
   reviewed_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   reviewed_by TEXT NOT NULL, -- net_id of trusted lab account
   approved BOOLEAN NOT NULL,
+  temporary_password TEXT NOT NULL, -- password generated on account creation
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
   net_id TEXT NOT NULL,

@@ -48,3 +48,17 @@ to_addresses = ["INSERT", "EMAILS"]
 from_address = "INSERT_FROM_ADDRESS"
 subject_template = "Lab Account Request: {n} account requests are awaiting review"
 body_template_file = "mail_templates/reminder.txt"
+
+[mail.request_approved]
+# `to_addresses` and `from_address` are currently unused for this mail
+to_addresses = []
+from_address = ""
+subject_template = "Your request for a CIF Lab Account has been approved!"
+body_template_file = "mail_templates/request_approved.txt"
+
+[mail.request_denied]
+# `to_addresses` and `from_address` are currently unused for this mail
+to_addresses = []
+from_address = ""
+subject_template = "Your request for a CIF Lab Account has been denied"
+body_template_file = "mail_templates/request_denied.txt"

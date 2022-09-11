@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Review - CIF Lab Account Request</title>
+</head>
+
+<body>
+  <h1>{{ "Approved" if approved else "Denied" }} Request From {{ first_name }} {{ last_name }}</h1>
+
+  <p>
+    Send an email to the applicant to update them on the status of their
+    request: <a href="{{ mailto_link }}">Draft email</a>
+  </p>
+
+  <p><a href="/review/{{ next_request_id }}">Next request</a></p>
+</body>
+
+</html>

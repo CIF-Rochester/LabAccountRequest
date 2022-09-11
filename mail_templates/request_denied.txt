@@ -1,0 +1,6 @@
+Hi {first_name},
+
+We have reviewed your request for a CIF Lab Account and have decided to not create
+an account for you at this time. ADD_REASON_HERE
+
+ADD_SIGNATURE_HERE

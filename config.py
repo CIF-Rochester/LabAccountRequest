@@ -36,6 +36,8 @@ class MailConfig:
         self.new_requests = MailTemplate(d['new_requests'])
         self.spam_detected = MailTemplate(d['spam_detected'])
         self.reminder = MailTemplate(d['reminder'])
+        self.request_approved = MailTemplate(d['request_approved'])
+        self.request_denied = MailTemplate(d['request_denied'])
 
 
 class MailTemplate:
@@ -45,7 +47,7 @@ class MailTemplate:
         self.subject_template: str = d['subject_template']
 
         with open(d['body_template_file']) as f:
-            self.body_template_file: str = f.read()
+            self.body_template: str = f.read()
 
 
 config = Config(toml.load('config.toml'))

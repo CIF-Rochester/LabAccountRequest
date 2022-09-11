@@ -1,0 +1,13 @@
+Hi {first_name},
+
+We have reviewed your request for a CIF Lab Account and have approved it. You
+can now swipe into our computer lab in the basement of Anderson and log into the
+computers.
+
+We've set a temporary password for you, but please visit https://citadel.cif.rochester.edu
+promptly and change it. Find your login details below:
+
+Username: {net_id}
+Password: {temporary_password}
+
+ADD_SIGNATURE_HERE

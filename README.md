@@ -5,8 +5,9 @@ A simple web-form to request the creation of a lab account.
 Features:
 - [ ] Request a lab account
 - [ ] Trusted lab accounts cany approve or deny requests
-- [ ] Audit log for actions
 - [ ] Email notifications of new requests sent to tech director emails
+- [ ] Audit log for actions
+- [ ] Form for lab account holders to update their card info
 - [ ] Email verification for lab account requests
   - Blocked on restrictions from SES sandbox
 - [ ] ReCaptcha for spam prevention
@@ -36,12 +37,17 @@ To set up the project for development:
     - aws.access_key
     - aws.secret_key
     - aws.sendmail_url
+    - web.secret_key
     - mail.*.to_addresses
     - mail.*.from_address
 
     Feel free to edit other settings. And remember, **never commit config.toml**.
 
-4. Start the development server with `python3 main.py`.
+5. Initialize the database with `python3 init_db.py`. You can run this again
+    to clear the data in the database and possibly update the database schema.
+
+6. Start the development server with `python3 main.py`. It automatically 
+    restarts when you change any python file.
 
 ## Deploying
 
@@ -125,6 +131,13 @@ If you followed all these steps and it didn't work, good luck!
 ### Deploying the web application
 
 TODO
+
+#### Updating the database schema in production
+
+Create a `migrate-NAME-DATE.sql` file with commands to migrate the old schema
+into the new format. Preserving data is important. Then run the commands in the
+file. You should commit the migration script and archive the pre-migration
+database somewhere (TODO: describe this process better).
 
 ## Architecture
 
