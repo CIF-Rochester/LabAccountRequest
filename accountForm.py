@@ -30,3 +30,4 @@ def create_request(conn: Connection, form: AccountForm):
         (form.first_name.data, form.last_name.data, form.net_id.data,
          form.student_id.data, form.lcc.data, form.reason.data)
     )
+    conn.commit()

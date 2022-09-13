@@ -43,13 +43,13 @@
     </tbody>
   </table>
 
-  <form action="/review/{{ request_id }}/submit">
+  <form action="/review/{{ request_id }}/submit" method="post">
     <input type="hidden" name="approved" value="true" />
     <input type="submit" value="Approve" />
   </form>
-  <form action="/review/{{ request_id }}/submit">
+  <form action="/review/{{ request_id }}/submit" method="post">
     <input type="hidden" name="approved" value="false" />
-    <input type="submit" value="Approve" />
+    <input type="submit" value="Deny" />
   </form>
 </body>
 
